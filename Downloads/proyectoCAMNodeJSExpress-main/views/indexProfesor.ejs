@@ -1,0 +1,98 @@
+<!-- Este archivo corresponde a la tabla Profesor -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e0/66/0b/e0660b888da867906dccd7ac93a36ad8.png">
+    <title>Profesores | CAM Lupita Santana</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://localhost:5000/inicioCAM">CAM Lupita Santana</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://localhost:5000/inicioCAM">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/alumnos">Alumnos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/profesores">Profesores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:3000">Cerrar Sesión</a>
+              </li>            
+          </div>
+        </div>
+    </nav>
+
+    <br><div class="row py-lg-5" >
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <center><h1 class="fw-light" >Centro de Atención Múltiple Lupita Santana</h1></center>
+        <center><h3 class="fw-light" >Administración de la Información de Profesores</h3></center>
+      </div>
+    </div>
+    
+    <div class="container">
+      <center><a href="/registrarProfesor" class="btn btn-primary btn-lg mt-6">Nuevo Profesor</a></center>
+        <table id="profesor" class="table table-bordered table-striped text-center mt-4">
+            <thead>
+                <tr class="bg-primary text-white">
+                    <th scope="col">Clave Profesor</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Apellido Materno</th>
+                    <th scope="col">Correo Electrónico</th>
+                    <th scope="col">Cursos</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((profesor)=> { %>
+            <tr>
+                <td><%=profesor.clave_profesor%></td>
+                <td><%=profesor.nombre_profesor%></td>
+                <td><%=profesor.apellido_paterno%></td>
+                <td><%=profesor.apellido_materno%></td>
+                <td><%=profesor.correo_electronico%></td>
+                <td><%=profesor.cursos%></td>
+                <td>
+                  <a href="/consultaProfesor/<%=profesor.clave_profesor%>" class="btn btn-warning">Consultar</a>
+                    <a href="/editarProfesor/<%=profesor.clave_profesor%>" class="btn btn-info">Editar</a>
+                    <a href="/eliminarProfesor/<%=profesor.clave_profesor%>" onclick="return confirm('Desea eliminar al Profesor?');" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#profesor').DataTable({
+      "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!-- Este archivo corresponde al Registro de datos de los Alumnos del CAM -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e0/66/0b/e0660b888da867906dccd7ac93a36ad8.png">
+    <title>Alumnos | CAM Lupita Santana</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://localhost:5000/inicioCAM">CAM Lupita Santana</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://localhost:5000/inicioCAM">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/alumnos">Alumnos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/profesores">Profesores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:3000">Cerrar Sesión</a>
+              </li>
+            
+          </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card border-secondary">
+            <center><H2><div class="card-header">Nuevo Alumno:</div></H2></center>
+            <div class="card-body">
+                <form action="/saveAlumno" method="POST">
+                    <center><H3><div class="card-header">Datos Personales:</div></H3></center>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" id="nombre_alumno" name="nombre_alumno" placeholder="Ej: Jose Jesus" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Apellido Paterno: </label>
+                        <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno" placeholder="Ej: Gomez" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Apellido Materno: </label>
+                        <input type="text" class="form-control" id="apellido_materno" name="apellido_materno" placeholder="Ej: Jimenez" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Fecha de Nacimiento: </label>
+                        <input type="text" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Ej: 01-04-1997" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Edad Cumplida: </label>
+                        <input type="number" class="form-control" id="edad_cumplida" name="edad_cumplida" placeholder="Ej: 25" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">No. Teléfono: (Opcional) </label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ej: 6864562233" tabindex="1">
+                    </div>
+                    <center><H3><div class="card-header">Dirección:</div></H3></center>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Calle: </label>
+                        <input type="text" class="form-control" id="calle" name="calle" placeholder="Ej: Av. Las Flores" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">No. Exterior: </label>
+                        <input type="number" class="form-control" id="num_exterior" name="num_exterior" placeholder="Ej: 1234" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Colonia: </label>
+                        <input type="text" class="form-control" id="colonia" name="colonia" placeholder="Ej: 5 de mayo" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Código Postal: </label>
+                        <input type="number" class="form-control" id="codigo_postal" name="codigo_postal" placeholder="Ej: 21333" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Ciudad: </label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ej: Mexicali" required tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Estado: </label>
+                        <input type="text" class="form-control" id="estado" name="estado" placeholder="Ej: Baja California" required tabindex="1">
+                    </div>
+                    <center><H3><div class="card-header">Estado de Salud:</div></H3></center>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Discapacidad: (Opcional)</label>
+                        <input type="text" class="form-control" id="discapacidad" name="discapacidad" placeholder="Ej: Sindrome de Down" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Enfermedades: (Opcional)</label>
+                        <input type="text" class="form-control" id="enfermedades" name="enfermedades" placeholder="Ej: Asma" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Alergias: (Opcional)</label>
+                        <input type="text" class="form-control" id="alergias" name="alergias" placeholder="Ej: Alergia al Polen" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Servicio Médico: (Opcional)</label>
+                        <input type="text" class="form-control" id="servicio_medico" name="servicio_medico" placeholder="Ej: IMSS" tabindex="1">
+                    </div>
+                    <center><H3><div class="card-header">Documentación:</div></H3></center>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Acta de Nacimiento: (Opcional)</label> 
+                        <br><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="opcionesActa" id="Acta" value="Si">
+                            <label class="form-check-label" for="Si">Si</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input checked="checked" class="form-check-input" type="radio" name="opcionesActa" id="Acta" value="No">
+                            <label class="form-check-label" for="No">No</label>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Fotografía: (Opcional)</label>
+                        <br><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="opcionesFoto" id="Foto" value="Si">
+                            <label class="form-check-label" for="Si">Si</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input checked="checked" class="form-check-input" type="radio" name="opcionesFoto" id="Foto" value="No">
+                            <label class="form-check-label" for="No">No</label>
+                          </div>                    
+                        </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">I.N.E.: (Opcional)</label>
+                        <br><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="opcionesINE" id="INE" value="Si">
+                            <label class="form-check-label" for="Si">Si</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input checked="checked" class="form-check-input" type="radio" name="opcionesINE" id="INE" value="No">
+                            <label class="form-check-label" for="No">No</label>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Comprobante de Domicilio: (Opcional)</label>
+                        <br><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="opcionesDomi" id="Domi" value="Si">
+                            <label class="form-check-label" for="Si">Si</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input checked="checked" class="form-check-input" type="radio" name="opcionesDomi" id="Domi" value="No">
+                            <label class="form-check-label" for="No">No</label>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">C.U.R.P.: (Opcional)</label>
+                        <br><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="opcionesCurp" id="Curp" value="Si">
+                            <label class="form-check-label" for="Si">Si</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input checked="checked" class="form-check-input" type="radio" name="opcionesCurp" id="Curp" value="No">
+                            <label class="form-check-label" for="No">No</label>
+                          </div>
+                    </div>
+                    
+                    <center><H3><div class="card-header">Asignación de Cursos:</div></H3></center>
+                    <div class="mb-3">
+                        <label for="alumno" class="form-label">Cursos:</label>
+                              <select id="cursos" name="cursos" class="form-select">
+                                <option value="" selected>Seleccione un Curso</option>
+                                    <% for(var i=0; i < curso.length; i++){ %>
+                                        <option value="<%= curso[i].clave_curso %> - <%= curso[i].nombre_curso %>"><%= curso[i].clave_curso %> - <%= curso[i].nombre_curso %></option>  
+                                    <%  } %>
+                              </select>
+                    </div>
+                    
+                    <center><button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                    <a href="/alumnos" class="btn btn-secondary">Cancelar</a></center>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
